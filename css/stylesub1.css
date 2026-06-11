@@ -1,0 +1,374 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    font-family: Pretendard;
+    font-size: 24px;
+    color: #111111;
+    overflow-x: hidden;
+
+    /* 아래로 마우스 커서  */
+    cursor: url(../images/cursor.png) 0 0, auto;
+}
+@font-face {
+    font-family: 'OkDandan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2508-2@1.0/OkDanDan-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 아래도 마우스 커서  */
+a:hover, button:hover, .hover-target:hover {
+  cursor: url(../images/cursor_hover.png) 0 0, pointer;
+}
+
+#wrap_wrap{
+    min-width:1400px;
+    overflow: hidden;
+}
+
+/* gnb 시작 ==================*/
+#gnb_bg{
+    background-color: #FAFAFA;
+    height: 70px;
+    width: 1320px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    position: fixed;
+    top: 35px;
+    left: 50%;
+    margin-left: -660px;
+    z-index: 1000;
+}
+.gnb_wrap{
+    display: flex;
+    justify-content: space-between;
+    font-family: okdandan;
+    font-size: 32px;
+}
+.logo a img{
+    height: 28px;
+    width: auto;
+    margin-left: 50px;
+    padding: 9.5px 50px; 
+    margin-top: 5px;
+}
+.gnb{
+    display: flex;
+    margin-right: 50px;
+}
+.gnb> li> a{
+    display: block;
+    padding: 15.1px 50px; 
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.gnb > li > a::before{
+    content: '';
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.3);
+
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 45%; 
+
+    opacity: 0;
+
+    transition: 
+    transform 0.45s cubic-bezier(.17,.67,.32,1.27),
+    opacity 0.3s;
+
+    z-index: -1;
+}
+
+/* hover =========== */
+.gnb> li:nth-child(1) a:hover::before{
+    background-image: url(../images/gnb_hover1.png);
+    background-size: 19%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+}
+
+.gnb> li:nth-child(2) a:hover::before{
+    background-image: url(../images/gnb_hover2.png);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+    background-size: 26%;
+}
+
+.gnb> li:nth-child(3) a:hover::before{
+    background-image: url(../images/gnb_hover3.png);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+    background-size: 26%;
+}
+
+.gnb> li:nth-child(4) a:hover::before{
+    background-image: url(../images/gnb_hover4.png);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+    background-size: 26%;
+}
+.gnb> li:nth-child(1) a:hover{
+    color: #066188
+}
+.gnb> li:nth-child(2) a:hover{
+    color: #87a804
+}
+.gnb> li:nth-child(3) a:hover{
+    color: #4e1f02
+}
+.gnb> li:nth-child(4) a:hover{
+    color: #dd0181
+}
+
+
+/* 메인 베너 시작 ==============*/
+.main_bg{
+    width: 100%;
+    height: 550px;
+    background-image: url(../images/sub1_main.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.main_wrap{
+    margin: 0 auto;
+    width: 1320px;
+}
+.main_banner_text{
+    font-family: okdandan;
+    color: #f6f6f6;
+    text-align: center;
+    padding-top: 250px;
+}
+.main_banner_text h1{
+    font-size: 80px;
+}
+.main_banner_text p{
+    font-size: 32px;
+}
+
+/* 메인 배너 아래 중앙 문구 */
+.mid_text{
+    font-family: okdandan;
+    color: #38B9F2;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 120px;
+}
+
+/* 섹션 1 지도 이미지와 내용 */
+.section1_bg{
+    width: 100%;
+    background-image: url(../images/sub1_section1_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 30px;
+}
+.section1_wrap{
+    margin: 0 auto;
+    width: 1320px;
+    padding-top: 180px;
+    padding-bottom: 200px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.map{
+    position: relative;
+    display: inline-block;
+}
+
+.map img{
+    display: block;
+}
+
+.map img:last-child{
+    position: absolute;
+    top: 50px;
+    left: 130px;
+
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.map:hover img:last-child{
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+.section1_text{
+    margin-top: 300px;
+    margin-right: 55px;
+}
+.section1_text h1 {
+    font-family: okdandan;
+    font-size: 54px;
+    margin-bottom: 40px;
+}
+.section1_text h1 span{
+    font-family: okdandan;
+    color: #38B9F2;
+    font-size: 54px;
+}
+.section1_text p{
+    font-size: 22px;
+    line-height: 36px;
+}
+/* 섹션 1 지도 이미지와 내용 끝 ==== */
+
+/* 섹션 2 시작 ========== */
+.section2_bg{
+    height: 2580px;
+    
+    position: relative;
+    overflow: hidden;
+
+    background-color: #F8F8F6;
+}
+
+.section2_bg::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url(../images/bg_pc.gif);
+    background-position: center;
+   
+
+    opacity: 0.6;  
+
+    pointer-events: none;
+}
+.section2_wrap{
+    margin: 0 auto;
+    width: 1320px;
+
+    font-family: okdandan;
+    font-size: 26px;
+    line-height: 40px;
+    color: #6D6C72;
+}
+
+.section2_contents{
+    margin-top: 290px;
+}
+.contents_group1{
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.contents_group2_img{
+    position: absolute;
+    top: 350px;
+}
+.contents_group2_text{
+    position: absolute;
+    top: 550px;
+    right: 350px;
+}
+.contents_group3{
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 270px;
+}
+.contents_group3 p{
+    padding-top: 300px;
+}
+
+/* 섹션2 가장 아래 3개 카드 ============ */
+.section2_card{
+    margin-top: 350px;
+}
+.section2_card ul{
+    display: flex;
+    justify-content: center;
+}
+.section2_card ul li{
+    margin: 0 60px ;
+}
+
+/* 섹션2 가장 아래 3개 카드 호버 */
+.section2_card ul li img{
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section2_card ul li img:hover{
+    transform: translateY(-12px);
+}
+
+
+
+/* footer ============================== */
+.footer_img{
+    position: relative;
+}
+.footer_img img{
+    display: block;
+    margin: 0 auto;
+}
+.footer_img_text{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer_img_text p{
+    text-align: center;
+    font-family: okdandan;
+    color: #F6F6F6;
+    font-size: 40px;
+}
+
+.footer_bg{
+    height: 272px;
+    background-image: url(../images/footer_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.footer_wrap{
+    width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+}
+.footer_logo img{
+    width: 102px;
+    height: 65px;
+}
+.footer_sns{
+    display: flex;
+    justify-content: center;
+}
+.footer_sns li a{
+    display: block;
+    margin: 0 9px;
+}
+.footer_sns li a:hover img{
+    filter: brightness(0.9);
+}

@@ -1,0 +1,582 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    font-family: Pretendard;
+    font-size: 24px;
+    color: #111111;
+    overflow-x: hidden;
+
+    /* 아래로 마우스 커서  */
+    cursor: url(../images/cursor.png) 0 0, auto;
+}
+@font-face {
+    font-family: 'OkDandan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2508-2@1.0/OkDanDan-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 아래도 마우스 커서  */
+a:hover, button:hover, .hover-target:hover {
+  cursor: url(../images/cursor_hover.png) 0 0, pointer;
+}
+
+#wrap_wrap{
+    min-width:1400px;
+    overflow: hidden;
+}
+
+/* gnb 시작 ==================*/
+#gnb_bg{
+    background-color: #FAFAFA;
+    height: 70px;
+    width: 1320px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    position: fixed;
+    top: 35px;
+    left: 50%;
+    margin-left: -660px;
+    z-index: 1000;
+}
+.gnb_wrap{
+    display: flex;
+    justify-content: space-between;
+    font-family: okdandan;
+    font-size: 32px;
+}
+.logo a img{
+    height: 28px;
+    width: auto;
+    margin-left: 50px;
+    padding: 9.5px 50px; 
+    margin-top: 5px;
+}
+.gnb{
+    display: flex;
+    margin-right: 50px;
+}
+.gnb> li> a{
+    display: block;
+    padding: 15.1px 50px; 
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.gnb > li > a::before{
+    content: '';
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.3);
+
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 45%; 
+
+    opacity: 0;
+
+    transition: 
+    transform 0.45s cubic-bezier(.17,.67,.32,1.27),
+    opacity 0.3s;
+
+    z-index: -1;
+}
+
+/* hover =========== */
+.gnb> li:nth-child(1) a:hover::before{
+    background-image: url(../images/gnb_hover1.png);
+    background-size: 19%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+}
+
+.gnb> li:nth-child(2) a:hover::before{
+    background-image: url(../images/gnb_hover2.png);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+    background-size: 26%;
+}
+
+.gnb> li:nth-child(3) a:hover::before{
+    background-image: url(../images/gnb_hover3.png);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+    background-size: 26%;
+}
+
+.gnb> li:nth-child(4) a:hover::before{
+    background-image: url(../images/gnb_hover4.png);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+    background-size: 26%;
+}
+.gnb> li:nth-child(1) a:hover{
+    color: #066188
+}
+.gnb> li:nth-child(2) a:hover{
+    color: #87a804
+}
+.gnb> li:nth-child(3) a:hover{
+    color: #4e1f02
+}
+.gnb> li:nth-child(4) a:hover{
+    color: #dd0181
+}
+
+
+/* 메인 베너 시작 ==============*/
+.main_bg{
+    width: 100%;
+    height: 446px;
+    background-image: url(../images/sub3_main.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.main_wrap{
+    margin: 0 auto;
+    width: 1320px;
+}
+.main_banner_text{
+    font-family: okdandan;
+    color: #f6f6f6;
+    text-align: center;
+    padding-top: 180px;
+}
+.main_banner_text h1{
+    font-size: 80px;
+}
+.main_banner_text p{
+    font-size: 32px;
+}
+
+
+/* 섹션1 시작 ======= */
+.section1_wrap{
+    position: relative;
+    background-color: #F8F8F6;
+}
+.section1_wrap::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: url(../images/bg_pc.gif) center/cover no-repeat;
+
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.section1{
+    margin: 0 auto;
+    width: 1320px;
+    height: 1400px;
+
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+.section1_text{
+    padding-top: 540px;
+    padding-left: 220px;
+
+    z-index: 2;
+    position: relative;
+
+    background-image: url(../images/sub3_section1_text_bg.png);
+    background-repeat: no-repeat;
+    background-position: top 496px left 177px;
+
+    
+}
+.section1_text h1{
+    font-family: okdandan;
+    font-size: 54px;
+    color: #402616;
+    margin-bottom: 40px;
+}
+.section1_text p{
+    font-size: 24px;
+    line-height: 36px;
+}
+
+/* 섹션 1 버튼  */
+.section1_text_bt span{
+    display: inline-block;
+    margin-left: 30px;
+}
+.section1_text_bt{
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: -40px;
+    padding: 12px 40px;
+    text-align: center;
+
+    background-color: #402616;
+    color: #F8F8F6;
+
+    border: 2px solid #402616;
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+.section1_text_bt:hover{
+    background-color: #f8f8f6b6;
+    color: #402616;
+}
+
+/* 섹션 1 이미지들 ========= */
+.section1_img1{
+    position: absolute;
+    top: 70px;
+    left: 0px;
+}
+
+.section1_img2{
+    position: absolute;
+    top: 0px;
+    right: 200px;
+}
+.section1_img3{
+    position: absolute;
+    top: 430px;
+    right: 0px;
+}
+.section1_img4{
+    position: absolute;
+    top: 530px;
+    left: 0px;
+}
+.section1_img5{
+    position: absolute;
+    top: 797px;
+    right: 225px;
+}
+
+
+/* 섹션2 지도 시작 ============ */
+.section2_bg{
+    height: 1142px;
+
+    background-image: url(../images/sub3_map.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.section2_wrap{
+    margin: 0 auto;
+    width: 1320px;
+
+    position: relative;
+}
+
+.section2_title{
+    font-family: okdandan;
+    font-size: 60px;
+    color: #402616;
+
+    padding-top: 100px;
+
+    display: inline-block;
+    transform: rotate(-5deg);
+}
+
+/* 섹션2 지도 안에 내용 이미지들  */
+.map_img_1{
+    position: absolute;
+    top: 148px;
+    right: 279px;
+}
+.map_img_2{
+    position: absolute;
+    top: 281px;
+    left: 315px;
+}
+.map_img_3{
+    position: absolute;
+    top: 588px;
+    right: 260px;
+}
+.map_img_4{
+    position: absolute;
+    top: 691px;
+    left: 300px;
+}
+
+/* 섹션2 지도 안에 움직이는 아이콘들*/
+.map_icon_1{
+    position: absolute;
+    top: 430px;
+    right: 280px;
+    z-index: 2;
+
+    animation: flowerSwing 3s ease-in-out infinite;
+    transform-origin: center bottom;
+}
+.map_icon_2{
+    position: absolute;
+    top: 643px;
+    left: 280px;
+    z-index: 2;
+
+    animation: catMove 1s ease-in-out infinite;
+}
+@keyframes flowerSwing{
+    0%{
+        transform: rotate(-3deg);
+    }
+    50%{
+        transform: rotate(3deg);
+    }
+    100%{
+        transform: rotate(-3deg);
+    }
+}
+@keyframes catMove{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+/* 섹션3 시작 ========= */
+.section3_bg{
+    position: relative;
+    background-color: #F8F8F6;
+
+    height: 2370px;
+    overflow: hidden;
+}
+.section3_bg::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: url(../images/bg_pc.gif) center top ;
+    background-size: 100% auto;
+
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.section3_wrap{
+    z-index: 1;
+    position: relative;
+
+    margin: 0 auto;
+    width: 1320px;
+}
+
+.section3_banner{
+    padding-top: 200px;
+}
+
+.section3_text{
+    margin-top: 230px;
+}
+.section3_text h1{
+    font-family: okdandan;
+    font-size: 54px;
+    color: #402616;
+    margin-bottom: 40px;
+}
+.section3_text p{
+    font-size: 24px;
+    line-height: 36px;
+}
+
+
+/* 섹션3 폴라 사진들 =======*/
+.section3_photo1{
+    position: absolute;
+    top: 1025px;
+    right: 800px;
+}
+.section3_photo2{
+    position: absolute;
+    top: 1150px;
+    right: 550px;
+}
+.section3_photo3{
+    position: absolute;
+    top: 1173px;
+    right: 300px;
+}
+.section3_photo4{
+    position: absolute;
+    top: 1548px;
+    right: 900px;
+}
+.section3_photo5{
+    position: absolute;
+    top: 1655px;
+    right: 630px;
+}
+.section3_photo6{
+    position: absolute;
+    top: 1621px;
+    right: 350px;
+}
+
+
+/* 섹션3 폴라 글자들=========== */
+.section3_info1{
+    position: absolute;
+    top: 1325px;
+    right: 907px;
+}
+.section3_info2{
+    position: absolute;
+    top: 1458px;
+    right: 634px;
+}
+.section3_info3{
+    position: absolute;
+    top: 1485px;
+    right: 330px;
+}
+.section3_info4{
+    position: absolute;
+    top: 1859px;
+    right: 930px;
+}
+.section3_info5{
+    position: absolute;
+    top: 1933px;
+    right: 680px;
+}
+.section3_info6{
+    position: absolute;
+    top: 1904px;
+    right: 356px;
+}
+
+
+
+/* 섹션3 하단 좌측 일러스트 */
+.section3_illust{
+    position: absolute;
+    bottom: 70px;
+    left: 300px;
+
+    width: 336px;
+    height: auto;
+}
+.section3_fly1{
+    position: absolute;
+    top: 1970px;
+    left: 580px;
+
+    animation: flySmall 3.2s ease-in-out infinite;
+    will-change: transform;
+}
+.section3_fly2{
+    position: absolute;
+    top: 1800px;
+    left: 480px;
+
+    animation: flyBig 5.8s ease-in-out infinite;
+    will-change: transform;
+}
+@keyframes flySmall{
+    0%{
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50%{
+        transform: translate(30px, -20px) rotate(6deg);
+    }
+    100%{
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+@keyframes flyBig{
+    0%{
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50%{
+        transform: translate(45px, -28px) rotate(-4deg);
+    }
+    100%{
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+
+/* footer ============================== */
+.footer_img{
+    position: relative;
+}
+.footer_img img{
+    display: block;
+    margin: 0 auto;
+}
+.footer_img_text{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer_img_text p{
+    text-align: center;
+    font-family: okdandan;
+    color: #F6F6F6;
+    font-size: 40px;
+}
+
+.footer_bg{
+    height: 272px;
+    background-image: url(../images/footer_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.footer_wrap{
+    width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+}
+.footer_logo img{
+    width: 102px;
+    height: 65px;
+}
+.footer_sns{
+    display: flex;
+    justify-content: center;
+}
+.footer_sns li a{
+    display: block;
+    margin: 0 9px;
+}
+.footer_sns li a:hover img{
+    filter: brightness(0.9);
+}
